@@ -3,9 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>About- Supreme Lobster</title>
+    <style>
+        * {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: none;
+            padding: none;
+        }
+
+        header {
+            display: flex;
+            justify-content:space-between;
+            position: fixed;
+            background-color: orange;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        main {
+            margin-top: 15%;
+        }
+
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-right: 20px;
+            justify-content: space-evenly;
+        }
+
+        li {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        h1, h2 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 300;
+        }
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 3%;
+        }
+
+        figure {
+            width: 50%;
+            margin: 4vh auto;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color:maroon;
+        }
+
+        #disclaimer {
+            color: gray;
+            font-style: italic;
+        }
+
+        .disclaimer {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>What We Do</h1>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+    </header>
+    <main>
+        <h2>Supreme Lobster </h2>
+        <p>
+            At Supreme Lobster Cable Repair, we specialize in the one type
+            of maintenance most missing in this world: deep-sea internet cables.
+            Every year, these poor cables are the victims of shark attacks for 
+            seemingly no reason, the result of which harms both the cable and the shark.
+            Here at Supreme Lobster, we do what we must to make sure that both parties 
+            end up in their best condition with our exclusive repair and prevention methods.
+            
+        </p>
+        <figure>
+            <img src="https://www.fibre-systems.com/sites/default/files/styles/content_banner/public/content/news-story/lead-image/shark-attack-web.jpg?h=9d9368ab&itok=9xZ7tKtO" alt="shark chewing on electrical cable">
+            <figcaption>A shark unassumingly taking a bite out of undersea cable.</figcaption>
+        </figure>
+        <p>With our services, we can guarantee at least a <a class="disclaimer" href="#disclaimer">70% reduction*</a> of cable-biting incidents,
+            as well as regular maintenance and quick repair for previously damaged cable. We offer very competitive
+            pricing for our services, especially considering that many others offer this service as well! <br>
+            Our plans are listed down below:
+        </p>
+        <hr>
+        <ul>
+            <li>Standard Plan- $300/Month. Covers basic repairs and maintenance for client cables.</li>
+            <li>Premium Plan- $600/Month. Covers repairs/maintenance, and additional shark-repelling technologies.</li>
+            <li>SUPREME Plan- $900/Month. Guarantees quick repairs, and a 99% shark-repelling rate.</li>
+        </ul>
+        <hr>
+        <p>If you're interested in reaching us about our services, please contact us down below!</p>
+    </main>
+    <footer>
+        <h3>Contact Us:</h3>
+        <address>
+            <p>Email: <a href="mailto:slobster@business.com">slobster@business.com</a></p>
+            <p>Phone: <a href="tel:+18006674275">1-800-NOSHARK</a></p>
+            <p>Physical Address:</p>
+            <p>218 Mariana Trench, Pacific Ocean, US</p>
+        </address>
+        <nav>
+            <p>Website Created by <a href="../luqmanenterprises.com/index.html">Luqman Enterprises &copy</a>.</p>
+        </nav>
+        <p id="disclaimer">*Reduction is only guaranteed at Premium Plan at minimum.</p>
+    </footer>
 </body>
 </html>
