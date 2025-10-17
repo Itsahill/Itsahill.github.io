@@ -12,15 +12,52 @@
         .img1 {
             width: 50%;
         }
+
+        .img2 {
+            width: 70%;
+        }
+
+        .img3 {
+            width: 70%;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 2%;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        li {
+            margin: 3%;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Gaming.</h1>
-
+        <ul>
+            <li class="btn what">What</li>
+            <li class="btn who">Who</li>
+            <li class="btn when">When</li>
+            <li class="btn where">Where</li>
+            <li class="btn how">How</li>
+            <li class="btn why">Why</li>
+        </ul>
     </header>
     <main>
-        <section class="topic-wrapper">
+        <section class="wrapper what">
             <h2>What Is Gaming?</h2>
             <p>
                 How do you define the activity of playing video games? Simply put, it's using some electronic device to interact with something
@@ -40,35 +77,50 @@
                 it's (usually) from a place of love.
             </p>
         </section>
-        <section class="topic-wrapper">
+        <section class="wrapper who">
             <h2>Who Are Games For?</h2>
-            <p></p>
+            <p>
+                This question is kind of redundant considering the previous section, but games are for anyone and everyone. Everyone can enjoy games, but not every 
+                game is enjoyed by everyone; it depends on what kind of experience you want. Looking to unwind with a relaxing, simple game? Maybe try Animal Crossing or something similar.
+                Want a game that's easy to pick up and put down? Tetris is right there? If you're looking for some action, there's a wide array of combat games, from beat-em-ups to fighters
+                to shooters. The point is that there's no way someone out there will hate every video game ever. If you can find the right one, they'll fold.
+            </p>
             <figure>
-                <figcaption></figcaption>
+                <img src="./images/hyperlightdrifter.jpg" alt="A landscape screenshot from Hyper Light Drifter" class="img2">
+                <figcaption>A screenshot I took from one of my favorite games, Hyper Light Drifter</figcaption>
+            </figure>
+            <p>
+                My preferred games are generally something with a lot of action and challenge to them. I regularly play games where I fail often, and get back up to do it again. 
+                Some examples of this would be Hyper Light Drifter(pictured here), Dark Souls, and ULTRAKILL. These games require a lot of practice and focus from me, and really 
+                get my heart beating in the tense moments. Doing well in these games makes me feel a sense of accomplishment I don't get anywhere else.
+            </p>
+            <figure>
+                <img src="./images/ultrakill.jpg" alt="screenshot of an ultrakill level ranking" class="img3">
+                <figcaption>Pictured: one of my most crowning achievements(this took weeks)</figcaption>
             </figure>
         </section>
-        <section class="topic-wrapper">
+        <section class="wrapper when">
             <h2>When Can You Game?</h2>
             <p></p>
             <figure>
                 <figcaption></figcaption>
             </figure>
         </section>
-        <section class="topic-wrapper">
+        <section class="wrapper where">
             <h2>Where Can You Game?</h2>
             <p></p>
             <figure>
                 <figcaption></figcaption>
             </figure>
         </section>
-        <section class="topic-wrapper">
+        <section class="wrapper how">
             <h2>How Do You Game?</h2>
             <p></p>
             <figure>
                 <figcaption></figcaption>
             </figure>
         </section>
-        <section class="topic-wrapper">
+        <section class="wrapper why">
             <h2>Why Should You Game?</h2>
             <p></p>
             <figure>

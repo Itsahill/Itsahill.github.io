@@ -1,1 +1,2 @@
-const sections = document.querySelectorAll('.topic-wrapper');
+const sections = document.querySelectorAll('.wrapper');
+const buttons = document.querySelectorAll('.btn');
