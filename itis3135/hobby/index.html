@@ -1,133 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahil Luqman Hobby Site</title>
     <style>
-        * {
-            margin: 0 auto;
-        }
+      * {
+        margin: 0;
+        color:#f4f4f4
+      }
 
-        .img1 {
-            width: 50%;
-        }
+      .img1 {
+        width: 50%;
+      }
 
-        .img2 {
-            width: 70%;
-        }
+      .img2 {
+        width: 70%;
+      }
 
-        .img3 {
-            width: 70%;
-        }
+      .img3 {
+        width: 70%;
+      }
 
-        header {
-            display: flex;
-            justify-content: flex-start;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #00001f;
+        background: radial-gradient(circle,rgba(0, 0, 31, 1) 55%, rgba(56, 56, 56, 1) 100%);
+        background-repeat: no-repeat;
+      }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 2%;
-        }
+      header {
+        display: flex;
+        justify-content: flex-start;
+        background: #020024;
+        background: linear-gradient(180deg, rgba(20, 20, 20, 1) 58%, rgba(99, 99, 99, 1) 100%);
+        width: 100%;
+        margin-bottom: 30px;
+      }
 
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-        }
+      figure {
+        margin: 20px 0;
+        text-align: center;
+      }
 
-        li {
-            margin: 3%;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
+      figcaption {
+        font-style: italic;
+        font-size: 0.9em;
+        margin-top: 5px;
+        color:rgba(150, 150, 150, 1)
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 2%;
+        justify-content: flex-start;
+        margin-right: 20%;
+        color: white;
+        padding-left: 2%;
+      }
+
+      header ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        color: white;
+        padding-right: 2%;
+      }
+
+      header ul li {
+        margin: 3%;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      header ul li:hover {
+        cursor: pointer;
+      }
+
+      main {
+        width: 85%;
+      }
+
+      p, li {
+        line-height: 1.3;
+        font-size: 1.2em;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      footer {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        color: #f4f4f4;
+        border: 1px solid #f4f4f4;
+      }
+
+      th, td {
+        border: 1px solid #f4f4f4;
+        padding: 8px;
+        text-align: left;
+      }
+
+      section:not(:first-of-type) {
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Gaming.</h1>
-        <ul>
-            <li class="btn what">What</li>
-            <li class="btn who">Who</li>
-            <li class="btn when">When</li>
-            <li class="btn where">Where</li>
-            <li class="btn how">How</li>
-            <li class="btn why">Why</li>
-        </ul>
+      <h1>Gaming.</h1>
+      <ul>
+        <li class="btn what">What</li>
+        <li class="btn who">Who</li>
+        <li class="btn when">When</li>
+        <li class="btn where">Where</li>
+        <li class="btn how">How</li>
+        <li class="btn why">Why</li>
+      </ul>
     </header>
     <main>
-        <section class="wrapper what">
-            <h2>What Is Gaming?</h2>
-            <p>
-                How do you define the activity of playing video games? Simply put, it's using some electronic device to interact with something
-                and have fun. But to describe the medium like this is to do it a disservice. Gaming is a complex, multifaceted activity that can be a soft and gentle
-                experience or a blood-pumping adrenaline nightmare, and everything in between. They can calm you, confuse you, raise your heart rate, crush you,
-                and raise you higher. Games can be a simple pleasure or an art form, and to discount them as simple entertainment would be the same as saying 
-                that music just sounds good or movies are nice to look at.
-            </p>
-            <figure>
-                <img src="./images/playstation-conroller.jpg" alt="close up of a playstation controller" class="img1">
-                <figcaption>Pictured: the standard instrument of a gamer</figcaption>
-            </figure>
-            <p>
-                Okay, enough pretentious pretext; I want to tell you what gaming is like from MY perspective, through MY experiences, and why I do it.
-                To me, playing games is something I do to because I enjoy challenge and the feeling of achievement I get when I earn a hard-fought victory(when it's something I want to do, not like work). 
-                Challenge is probably a main point of why I enjoy gaming, and though I can complain about some part or other of a difficult game,
-                it's (usually) from a place of love.
-            </p>
-        </section>
-        <section class="wrapper who">
-            <h2>Who Are Games For?</h2>
-            <p>
-                This question is kind of redundant considering the previous section, but games are for anyone and everyone. Everyone can enjoy games, but not every 
-                game is enjoyed by everyone; it depends on what kind of experience you want. Looking to unwind with a relaxing, simple game? Maybe try Animal Crossing or something similar.
-                Want a game that's easy to pick up and put down? Tetris is right there? If you're looking for some action, there's a wide array of combat games, from beat-em-ups to fighters
-                to shooters. The point is that there's no way someone out there will hate every video game ever. If you can find the right one, they'll fold.
-            </p>
-            <figure>
-                <img src="./images/hyperlightdrifter.jpg" alt="A landscape screenshot from Hyper Light Drifter" class="img2">
-                <figcaption>A screenshot I took from one of my favorite games, Hyper Light Drifter</figcaption>
-            </figure>
-            <p>
-                My preferred games are generally something with a lot of action and challenge to them. I regularly play games where I fail often, and get back up to do it again. 
-                Some examples of this would be Hyper Light Drifter(pictured here), Dark Souls, and ULTRAKILL. These games require a lot of practice and focus from me, and really 
-                get my heart beating in the tense moments. Doing well in these games makes me feel a sense of accomplishment I don't get anywhere else.
-            </p>
-            <figure>
-                <img src="./images/ultrakill.jpg" alt="screenshot of an ultrakill level ranking" class="img3">
-                <figcaption>Pictured: one of my most crowning achievements(this took weeks)</figcaption>
-            </figure>
-        </section>
-        <section class="wrapper when">
-            <h2>When Can You Game?</h2>
-            <p></p>
-            <figure>
-                <figcaption></figcaption>
-            </figure>
-        </section>
-        <section class="wrapper where">
-            <h2>Where Can You Game?</h2>
-            <p></p>
-            <figure>
-                <figcaption></figcaption>
-            </figure>
-        </section>
-        <section class="wrapper how">
-            <h2>How Do You Game?</h2>
-            <p></p>
-            <figure>
-                <figcaption></figcaption>
-            </figure>
-        </section>
-        <section class="wrapper why">
-            <h2>Why Should You Game?</h2>
-            <p></p>
-            <figure>
-                <figcaption></figcaption>
-            </figure>
-        </section>
+      <section class="wrapper what">
+        <h2>What Is Gaming?</h2>
+        <p>
+          How do you define the activity of playing video games? Simply put,
+          it's using some electronic device to interact with something and have
+          fun. But to describe the medium like this is to do it a disservice.
+          Gaming is a complex, multifaceted activity that can be a soft and
+          gentle experience or a blood-pumping adrenaline nightmare, and
+          everything in between. They can calm you, confuse you, raise your
+          heart rate, crush you, and raise you higher. Games can be a simple
+          pleasure or an art form, and to discount them as simple entertainment
+          would be the same as saying that music just sounds good or movies are
+          nice to look at.
+        </p>
+        <figure>
+          <img
+            src="./images/playstation-conroller.jpg"
+            alt="close up of a playstation controller"
+            class="img1"
+          />
+          <figcaption>Pictured: the standard instrument of a gamer</figcaption>
+        </figure>
+        <p>
+          Okay, enough pretentious pretext; I want to tell you what gaming is
+          like from MY perspective, through MY experiences, and why I do it. To
+          me, playing games is something I do to because I enjoy challenge and
+          the feeling of achievement I get when I earn a hard-fought
+          victory(when it's something I want to do, not like work). Challenge is
+          probably a main point of why I enjoy gaming, and though I can complain
+          about some part or other of a difficult game, it's (usually) from a
+          place of love.
+        </p>
+      </section>
+      <section class="wrapper who">
+        <h2>Who Are Games For?</h2>
+        <p>
+          This question is kind of redundant considering the previous section,
+          but games are for anyone and everyone. Everyone can enjoy games, but
+          not every game is enjoyed by everyone; it depends on what kind of
+          experience you want. Looking to unwind with a relaxing, simple game?
+          Maybe try Animal Crossing or something similar. Want a game that's
+          easy to pick up and put down? Tetris is right there? If you're looking
+          for some action, there's a wide array of combat games, from
+          beat-em-ups to fighters to shooters. The point is that there's no way
+          someone out there will hate every video game ever. If you can find the
+          right one, they'll fold.
+        </p>
+        <figure>
+          <img
+            src="./images/hyperlightdrifter.jpg"
+            alt="A landscape screenshot from Hyper Light Drifter"
+            class="img2"
+          />
+          <figcaption>
+            A screenshot I took from one of my favorite games, Hyper Light
+            Drifter
+          </figcaption>
+        </figure>
+        <p>
+          My preferred games are generally something with a lot of action and
+          challenge to them. I regularly play games where I fail often, and get
+          back up to do it again. Some examples of this would be Hyper Light
+          Drifter(pictured here), Dark Souls, and ULTRAKILL. These games require
+          a lot of practice and focus from me, and really get my heart beating
+          in the tense moments. Doing well in these games makes me feel a sense
+          of accomplishment I don't get anywhere else.
+        </p>
+        <figure>
+          <img
+            src="./images/ultrakill.jpg"
+            alt="screenshot of an ultrakill level ranking"
+            class="img2"
+          />
+          <figcaption>
+            Pictured: one of my most crowning achievements(this took weeks)
+          </figcaption>
+        </figure>
+      </section>
+      <section class="wrapper when">
+        <h2>When Can You Game?</h2>
+        <p>
+          Gaming isn't usually a hobby you have to plan around for, unless
+          you're playing with friends for some predetermined event. The simple
+          answer is: whenever you want. But what game you play in that time is
+          usually up to what you're feeling at that time. If you need to get
+          away from the stress of work, maybe try something relaxing. If you're
+          bored out of your mind, think of picking up something engaging. If you
+          feel like solving puzzles, try something confusing. But if you are
+          feeling any of these emotions, try to hold it until your attention
+          isn't required by something or someone. Or play Tetris in class, it's
+          your decision(I do not condone this).
+        </p>
+        <h3>Appropriate Gaming Times:</h3>
+        <ul>
+          <li>At home when not busy</li>
+          <li>On long trips</li>
+          <li>When you need to kill time</li>
+          <li>Probably not during funerals (personal experience)</li>
+        </ul>
+        <figure>
+          <img
+            src="./images/guygaming.jpg"
+            alt="Man playing video game"
+            class="img1"
+          />
+          <figcaption>
+            This man is gaming in the comfort of his own home.
+          </figcaption>
+        </figure>
+      </section>
+      <section class="wrapper where">
+        <h2>Where Can You Game?</h2>
+        <p>
+          It depends on the reason, and what you're using to game. Me
+          personally, I prefer using a computer in the comfort of my own home,
+          but you can also use a stationary console in these places as well. If
+          you're not at home, maybe you have a handheld console; a 3DS or Switch
+          or something of the like. Honestly, if you felt like it, you could
+          even bring a console and a monitor to a place with enough electrical
+          sockets. Who's going to stop you? The police? They don't care. On-site
+          staff? I mean, if they get paid enough, then maybe. Human Resources?
+          They're too busy rejecting job applications.
+        </p>
+        <figure>
+          <img src="./images/3ds.jpg" alt="A Nintendo 3DS" class="img1" />
+          <figcaption>Pictured: a Nintendo 3DS</figcaption>
+        </figure>
+        <table>
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Appropriateness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Library</td>
+              <td>
+                Acceptable w/smaller devices & headphones (phones, handhelds)
+              </td>
+            </tr>
+            <tr>
+              <td>Home</td>
+              <td>Very Appropriate, no qualms here</td>
+            </tr>
+            <tr>
+              <td>Friend's House</td>
+              <td>As long as <i>you're</i> using the rubber band controller</td>
+            </tr>
+            <tr>
+              <td>Place Where You Eat</td>
+              <td>
+                I mean you can, but like. You might get grease or food on your
+                stuff
+              </td>
+            </tr>
+            <tr>
+              <td>Funerals</td>
+              <td>If you're brave enough</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="wrapper how">
+        <h2>How Do You Game?</h2>
+        <p>
+          How you should or are supposed to game is a great question, and not
+          really one I can answer. Every game has its differences, no matter how
+          minute they are, so the actual way you're supposed to play is
+          determined by the game's directions and your personal preferences.
+          Maybe you're an old man who thinks the only way to play Halo is on an
+          Xbox controller. That's fine. Maybe you're a freak of nature that
+          thinks fighting games should be played on a keyboard and mouse. That's
+          okay, I guess. Maybe. Not really. But the point is, I cannot answer
+          this question for you directly. I can only give you examples of how
+          people do this already.
+        </p>
+        <figure>
+          <img src="./images/pcgaming.jpg" alt="kid on computer" class="img1" />
+          <figcaption>
+            This kid could be playing Half-Life for all I know.
+          </figcaption>
+        </figure>
+        <p>
+          I want to make this specification because not every preference will
+          fit every game. Playing a fighting game with a keyboard is strange and
+          awful and I don't like you, but it's possible to do it and do it well.
+          Trying to play a fighting game on a Guitar Hero controller, while
+          theoretically possible, is not going to be as convenient. Same with
+          playing Call of Duty on a dance pad, or literally anything other than
+          Just Dance with a Kinect.
+        </p>
+      </section>
+      <section class="wrapper why">
+        <h2>Why Should You Game?</h2>
+        <p>
+          The simple reason is: because it's fun! You don't play video games
+          because you have to, or you'll die if you don't. But a fuller
+          explanation would be because it's an escape, in some shape or form.
+          Obviously, you wouldn't actually fight monsters if you were bored, or
+          do farmwork if you wanted to unwind, but in an abstracted perspective
+          (from a screen), these things let you act out a more exciting or
+          relaxing life. They let you have experiences, either alone or with
+          friends, that you couldn't have anywhere else. Movies don't have that
+          sense of interactivity, physical hobbies don't have that sense of
+          vicariousness that lets you experience something extraordinary.
+        </p>
+        <figure>
+          <img
+            src="./images/guygaming2.jpg"
+            alt="A kid playing a video game"
+            class="img1"
+          />
+          <figcaption>
+            You're not allowed to steal fighter jets in real life,
+            unfortunately.
+          </figcaption>
+        </figure>
+        <p>
+          Gaming lets me hang out with my friends even when we aren't physically
+          close, and have great experiences alongside that. I've made great
+          memories with friends and family, and some games have left a lasting
+          impact on me as a person. I've been playing video games for about as
+          long as I can remember, and I can't say I've regretted my decision.
+          Gaming is an activity for everyone. If you didn't think that before, I
+          hope you do now.
+        </p>
+      </section>
     </main>
-    <footer></footer>
-</body>
+    <footer>
+      <p>
+        Page built by
+        <a href="./luqmanenterprises.com/index.html">Luqman Enterprises</a>
+        &copy;
+      </p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png"
+          alt="Valid HTML!"
+        />
+      </a>
+      <a
+        href="https://jigsaw.w3.org/css-validator/check/referer"
+        id="validation_link_css"
+      >
+        <img
+          style="border: 0; width: 88px; height: 31px"
+          src="https://jigsaw.w3.org/css-validator/images/vcss"
+          alt="Valid CSS!"
+        />
+      </a>
+      <script>
+        document
+          .getElementById("validation_link_html")
+          .setAttribute(
+            "href",
+            "https://validator.w3.org/check?uri=" + location.href
+          );
+        document
+          .getElementById("validation_link_css")
+          .setAttribute(
+            "href",
+            "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
+          );
+      </script>
+    </footer>
+    <script src="./scripts/reveal.js"></script>
+  </body>
 </html>
