@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Luqman's Supreme Lobster || ITIS 3135 || BYO Intro</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2>Build Your Own Intro Form</h2>
+        <form action="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+                <label for="middle-initial">Middle Initial (Optional):</label>
+                <input type="text" id="middle-initial" name="middle-initial">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+                <label for="nickname">Nickname (Optional):</label>
+                <input type="text" id="nickname" name="nickname">
+            </fieldset>
+            <fieldset>
+                <legend>Acknowledgement</legend>
+                <label for="acknowledgement">I acknowledge that any information I post here is publicly visible.</label>
+                <input type="checkbox" id="acknowledgement" name="acknowledgement" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </fieldset>
+            <fieldset>
+                <legend>Mascot Information</legend>
+                <label for="adjective">Mascot Adjective:</label>
+                <input type="text" id="adjective" name="adjective" placeholder="e.g., Supreme" required>
+                <label for="mascot">Mascot Animal:</label>
+                <input type="text" id="mascot" name="mascot" placeholder="e.g., Lobster" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Picture</legend>
+                <label for="picture">Upload a picture of you here:</label>
+                <input type="file" id="picture" name="picture" accept="image/*" required>
+                <button type="button">Click here to load image</button>
+                <div id="image-preview">
+
+                </div>
+                <label for="caption">Image Caption:</label>
+                <input type="text" id="caption" name="caption" placeholder="e.g., Me in Alaska" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>About You</legend>
+                <label for="personal-statement">Personal Statement:</label>
+                <textarea id="personal-statement" name="personal-statement" rows="4" required></textarea>
+                <label for="personal-background">Personal Background:</label>
+                <textarea id="personal-background" name="personal-background" rows="4" required></textarea>
+                <label for="academic-background">Academic Background:</label>
+                <textarea id="academic-background" name="academic-background" rows="4" required></textarea>
+                <label for="professional-background">Professional Background:</label>
+                <textarea id="professional-background" name="professional-background" rows="4" required></textarea>
+                <label for="primary-computer">Primary Computer:</label>
+                <textarea name="primary-computer" id="primary-computer" rows="4" required></textarea>
+                <label for="course-1">Course 1:</label>
+                <textarea name="course-1" id="course-1" rows="4" required></textarea>
+                <label for="course-2">Course 2:</label>
+                <textarea name="course-2" id="course-2" rows="4" required></textarea>
+                <label for="course-3">Course 3:</label>
+                <textarea name="course-3" id="course-3" rows="4" required></textarea>
+            </fieldset>
+        </form>
+    </main>
+     <footer>
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLinclude.js"></script>
+</body>
+</html>
