@@ -1,81 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahil Luqman's Supreme Lobster || ITIS 3135 || BYO Intro</title>
-    <link rel="stylesheet" href="styles/default.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-</head>
-<body>
-     <header>
-        <div data-include="components/header.html"></div>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      textarea {
+        width: 100%;
+        max-width: 600px;
+        background-color: #333138;
+        border: 1px solid red;
+        color: white;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        width: 100%;
+        max-width: 600px;
+        background-color: #333138;
+        border: 1px solid red;
+        color: white;
+      }
+
+      fieldset {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 2px solid red;
+      }
+
+      ::placeholder {
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div data-include="components/header.html"></div>
     </header>
     <main>
-        <h2>Build Your Own Intro Form</h2>
-        <form action="post">
+       <div id="output-container"></div>
+        <h2>Introduction Form</h2>
+        <h3>Please submit the form below:</h3>
+        <form>
             <fieldset>
-                <legend>Personal Information</legend>
+                <legend>Name Information</legend>
+
                 <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" required>
-                <label for="middle-initial">Middle Initial (Optional):</label>
-                <input type="text" id="middle-initial" name="middle-initial">
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name here" required>
+                <br>
+
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" name="middle-name" placeholder="Enter your middle name here">
+                <br>
+
+                <label for="preferred-name">Nickname:</label>
+                <input type="text" id="preferred-name" name="preferred-name" placeholder="Enter your nickname here">
+                <br>
+
                 <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" required>
-                <label for="nickname">Nickname (Optional):</label>
-                <input type="text" id="nickname" name="nickname">
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name here" required>
             </fieldset>
+
             <fieldset>
                 <legend>Acknowledgement</legend>
-                <label for="acknowledgement">I acknowledge that any information I post here is publicly visible.</label>
-                <input type="checkbox" id="acknowledgement" name="acknowledgement" required>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
+
+                <label for="initials">Acknowledgement Statement</label>
+                <p>I acknowledge that any information I post here is publicly visible.</p>
+                <input type="text" id="initials" name="initials" placeholder="Enter your initials" required>
+
+                <label for="date">Acknowledgement Date: </label>
+                <input type="text" id="date" name="date"  required>
             </fieldset>
+
             <fieldset>
                 <legend>Mascot Information</legend>
-                <label for="adjective">Mascot Adjective:</label>
-                <input type="text" id="adjective" name="adjective" placeholder="e.g., Supreme" required>
-                <label for="mascot">Mascot Animal:</label>
-                <input type="text" id="mascot" name="mascot" placeholder="e.g., Lobster" required>
+                
+                <label for="mascot-adjective">Mascot Adjective:</label>
+                <input type="text" id="mascot-adjective" name="mascot-adjective" placeholder="e.g. Supreme"  required>
+
+                <label for="mascot-animal">Mascot Animal:</label>
+                <input type="text" id="mascot-animal" name="mascot-animal" placeholder="e.g. Lobster"  required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Divider</legend>
+
+                <label for="divider">Divider Character:</label>
+                <input type="text" id="divider" name="divider" placeholder="e.g. |"  required>
             </fieldset>
 
             <fieldset>
                 <legend>Picture</legend>
-                <label for="picture">Upload a picture of you here:</label>
-                <input type="file" id="picture" name="picture" accept="image/*" required>
-                <button type="button">Click here to load image</button>
-                <div id="image-preview">
 
+                <label for="picture">Image Upload:</label>
+                <input type="file" id="picture" name="picture" accept="image/*">
+                <div id="image">
+                    <img src="images/me-in-alaska.jpg" alt="Sahil Luqman">
                 </div>
-                <label for="caption">Image Caption:</label>
-                <input type="text" id="caption" name="caption" placeholder="e.g., Me in Alaska" required>
+                <button type="button" id="load-image-btn">Load Image</button>
+
+                <label for="picture-caption">Picture Caption:</label>
+                <input type="text" id="picture-caption" name="picture-caption" placeholder="Enter picture caption here" required>
             </fieldset>
 
             <fieldset>
-                <legend>About You</legend>
-                <label for="personal-statement">Personal Statement:</label>
-                <textarea id="personal-statement" name="personal-statement" rows="4" required></textarea>
+                <legend>Background</legend>
+
                 <label for="personal-background">Personal Background:</label>
-                <textarea id="personal-background" name="personal-background" rows="4" required></textarea>
-                <label for="academic-background">Academic Background:</label>
-                <textarea id="academic-background" name="academic-background" rows="4" required></textarea>
+                <textarea name="personal-background" id="personal-background" placeholder="Enter your personal background here."></textarea>
+
                 <label for="professional-background">Professional Background:</label>
-                <textarea id="professional-background" name="professional-background" rows="4" required></textarea>
-                <label for="primary-computer">Primary Computer:</label>
-                <textarea name="primary-computer" id="primary-computer" rows="4" required></textarea>
-                <label for="course-1">Course 1:</label>
-                <textarea name="course-1" id="course-1" rows="4" required></textarea>
-                <label for="course-2">Course 2:</label>
-                <textarea name="course-2" id="course-2" rows="4" required></textarea>
-                <label for="course-3">Course 3:</label>
-                <textarea name="course-3" id="course-3" rows="4" required></textarea>
+                <textarea name="professional-background" id="professional-background" placeholder="Enter your professional background here."></textarea>
+
+                <label for="academic-background">Academic Background:</label>
+                <textarea name="academic-background" id="academic-background" placeholder="Enter your academic background here."></textarea>
             </fieldset>
+
+            <fieldset>
+                <legend>Courses I'm Taking & Why:</legend>
+
+                <div id="courses-container">
+                    <fieldset id="course1">
+                        <label for="department1">Department:</label>
+                        <input type="text" id="department1" name="department1" placeholder="Enter course department here" required/>
+                        
+                        <label for="coursenumber-1">Course Number:</label>
+                        <input type="text" id="coursenumber-1" name="coursenumber-1" placeholder="Enter course number here" required/>
+
+                        <label for="coursename-1">Course Name:</label>
+                        <input type="text" id="coursename-1" name="coursename-1" placeholder="Enter course name here" required/>
+                        
+                        <label for="reason-1">Reason for Taking:</label>
+                        <input type="text" id="reason-1" name="reason-1" placeholder="Enter reason for taking course here" required/>
+                        
+                        <button type="button" class="remove-course-button">Remove Course</button>
+                    </fieldset>
+                </div>
+
+                <button type="button" id="add-course-button">Add New Course</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quote</legend>
+
+                <label for="quote">Favorite Quote:</label>
+                <input type="text" id="quote" name="quote" placeholder="Enter your quote here" required>
+                
+                <label for="quote-author">Quote Author:</label>
+                <input type="text" id="quote-author" name="quote-author" placeholder="Enter the quote author here" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Information</legend>
+
+                <label for="funny-item">Funny/Interesting Item to Remember Me by:</label>
+                <input type="text" id="funny-item" name="funny-item" placeholder="Enter a funny/interesting item here">
+
+                <label for="share">Something I would like to share:</label>
+                <input type="text" id="share" name="share" placeholder="Enter something you would like to share here">
+            </fieldset>
+
+            <div id="buttonsContainer">
+                <button type="submit" id="submit">Submit</button>
+                <button type="button" id="reset">Reset</button>
+                <button type="button" id="clear-button">Clear</button>
+            </div>
         </form>
     </main>
-     <footer>
-        <div data-include="components/footer.html"></div>
+    <footer>
+      <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLinclude.js"></script>
-</body>
+    <script src="scripts/introform.js"></script>
+  </body>
 </html>
