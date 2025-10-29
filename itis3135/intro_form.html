@@ -16,6 +16,7 @@
         background-color: #333138;
         border: 1px solid red;
         color: white;
+        box-sizing: border-box;
       }
 
       input[type="text"],
@@ -25,16 +26,26 @@
         background-color: #333138;
         border: 1px solid red;
         color: white;
+        box-sizing: border-box;
       }
 
       fieldset {
         margin-bottom: 20px;
         padding: 10px;
         border: 2px solid red;
+        box-sizing: border-box;
       }
 
       ::placeholder {
         color: #bbb;
+      }
+
+      blockquote, p {
+        text-align: center;
+      }
+
+      h3 {
+        text-align: center;
       }
     </style>
   </head>
@@ -165,7 +176,7 @@
                 <input type="text" id="share" name="share" placeholder="Enter something you would like to share here">
             </fieldset>
 
-            <div id="buttonsContainer">
+            <div id="buttons-container">
                 <button type="submit" id="submit">Submit</button>
                 <button type="button" id="reset">Reset</button>
                 <button type="button" id="clear-button">Clear</button>

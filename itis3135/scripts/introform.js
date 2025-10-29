@@ -54,7 +54,12 @@ document.getElementById("load-image-btn").addEventListener("click", () => {
 });
 
 document.getElementById("clear-button").addEventListener("click", () => {
-    document.getElementsByTagName("form")[0].reset();
+    Array.from(document.querySelectorAll("input")).forEach((input) => {
+        input.value = "";
+    });
+    Array.from(document.querySelectorAll("textarea")).forEach((textarea) => {
+        textarea.value = "";
+    });
     let imgElement = document.getElementById("image").getElementsByTagName("img")[0];
     imgElement.src = "images/me-in-alaska.jpg";
 });
@@ -87,7 +92,7 @@ document.getElementById("submit").addEventListener("click", () => {
     let content = `
     <h2>Introduction</h2>
     <p>I acknowledge that any information I post here is publicly visible. -${entries['initials']} ${entries['date']}</p>
-    <h3>${entries['first-name']} ${entries['middle-name']} ${entries['nickname']} ${entries['last-name']} ${entries['divider']} ${entries['mascot-adjective']} ${entries['mascot-animal']}</h3>
+    <h3>${entries['first-name']} ${entries['middle-name']} ${entries['preferred-name']} ${entries['last-name']} ${entries['divider']} ${entries['mascot-adjective']} ${entries['mascot-animal']}</h3>
     <figure>
         ${document.getElementById("image").innerHTML}
         <figcaption>${entries['picture-caption']}</figcaption>
@@ -123,7 +128,7 @@ document.getElementById("submit").addEventListener("click", () => {
     }
     content += `
         </ul>
-        <blockquote>${entries['quote']}</blockquote>
+        <blockquote><i>${entries['quote']}</i></blockquote>
         <p>- ${entries['quote-author']}</p>
     `;
 
@@ -137,4 +142,35 @@ document.getElementById("submit").addEventListener("click", () => {
 
     document.getElementById("output-container").innerHTML = content;
 
+});
+
+document.querySelector("#submit").addEventListener("click", () => {
+    Array.from(document.getElementsByTagName("fieldset")).forEach((fieldset) => {
+        fieldset.style.display = "none";
+    });
+    Array.from(document.querySelectorAll("button[type='button']")).forEach((button) => {
+        if (button.id !== "reset") {
+            button.style.display = "none";
+        }
+    });
+});
+
+document.querySelector("#reset").addEventListener("click", () => {
+    Array.from(document.querySelectorAll("input")).forEach((input) => {
+        input.value = "";
+    });
+    Array.from(document.querySelectorAll("textarea")).forEach((textarea) => {
+        textarea.value = "";
+    });
+    document.getElementById("output-container").innerHTML = "";
+    document.getElementsByTagName("h2")[0].style.display = "block";
+    document.getElementsByTagName("h3")[0].style.display = "block";
+    document.getElementById("clear-button").style.display = "inline";
+    document.querySelector("button[type='submit']").style.display = "inline";
+    Array.from(document.getElementsByTagName("fieldset")).forEach((fieldset) => {
+        fieldset.style.display = "block";
+    });
+    Array.from(document.querySelectorAll("button[type='button']")).forEach((button) => {
+        button.style.display = "inline";
+    });
 });
