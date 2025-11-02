@@ -48,6 +48,7 @@
         text-align: center;
       }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
   </head>
   <body>
     <header>
@@ -180,6 +181,8 @@
                 <button type="submit" id="submit">Submit</button>
                 <button type="button" id="reset">Reset</button>
                 <button type="button" id="clear-button">Clear</button>
+                <button type="button" id="json">Generate JSON</button>
+
             </div>
         </form>
     </main>
@@ -188,5 +191,10 @@
     </footer>
     <script src="scripts/HTMLinclude.js"></script>
     <script src="scripts/introform.js"></script>
+    <script src="scripts/generate_json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>
