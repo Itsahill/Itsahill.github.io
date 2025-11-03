@@ -15,9 +15,10 @@ document.getElementById("json").addEventListener("click", () => {
     });
     const jsonString = JSON.stringify(entries, null, 2);
     const outputContainer = document.getElementById("output-container");
-    outputContainer.innerHTML = "<h2>Generated JSON</h2><pre><code class='>" + jsonString + "</code></pre>";
+    outputContainer.innerHTML = "<h2>Generated JSON</h2><pre><code class='json'>" + jsonString + "</code></pre>";
 
-    
+    hljs.highlightAll();
+
     Array.from(document.getElementsByTagName("fieldset")).forEach((fieldset) => {
         fieldset.style.display = "none";
     });
