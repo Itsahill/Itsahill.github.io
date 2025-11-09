@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Stack Sans Notch', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 1rem 2%;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    color: white;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -15,7 +15,7 @@
   Page built by
   <a href="./luqmanenterprises.com/index.html">Luqman Enterprises</a> &copy;
 </p>
-<a href="https://validator.w3.org/check?uri=referer">
+<a id="validation_link_html" href="https://validator.w3.org/check?uri=referer">
   <img
     style="border: 0; width: 88px; height: 31px"
     src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png"
@@ -33,16 +33,12 @@
   />
 </a>
 <script>
-  document
-    .getElementById("validation_link_html")
-    .setAttribute(
-      "href",
-      "https://validator.w3.org/check?uri=" + location.href
-    );
-  document
-    .getElementById("validation_link_css")
-    .setAttribute(
-      "href",
-      "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
-    );
+  const htmlLink = document.getElementById("validation_link_html");
+  if (htmlLink) {
+    htmlLink.setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+  }
+  const cssLink = document.getElementById("validation_link_css");
+  if (cssLink) {
+    cssLink.setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  }
 </script>

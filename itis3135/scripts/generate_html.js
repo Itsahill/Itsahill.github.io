@@ -1,5 +1,3 @@
-
-
 document.getElementById('html').addEventListener('click', function() {
     const requiredInput = document.querySelectorAll("input[required]");
     for (let input of requiredInput) {
@@ -56,7 +54,10 @@ document.getElementById('html').addEventListener('click', function() {
         <p>- ${entries['quote-author']}</p>
     `;
     const outputContainer = document.getElementById("output-container");
-    outputContainer.innerHTML = "<h2>Generated HTML</h2><pre><code class='html'>" + escapeHtml(content) + "</code></pre>";
+    outputContainer.innerHTML = "<h2>Generated HTML</h2><pre><code class='language-html'>" + escapeHtml(content) + "</code></pre>";
+
+    // Initialize syntax highlighting
+    hljs.highlightElement(outputContainer.querySelector('code'));
 
     Array.from(document.getElementsByTagName("fieldset")).forEach((fieldset) => {
         fieldset.style.display = "none";
