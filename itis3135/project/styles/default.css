@@ -46,3 +46,85 @@ a {
     text-decoration: none;
     color: black;
 }
+
+a:hover {
+    color: gray;
+}
+
+.preview-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.project-preview {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin: 1rem 0;
+
+    /* center content and hide overflow for the scale effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    /* smooth scale transition */
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    transform-origin: center;
+    will-change: transform;
+}
+
+.project-preview:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 2;
+}
+
+.project-preview h2 {
+    margin: 0;
+    /* hidden by default */
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 200ms ease, transform 300ms ease;
+    font-size: 4em;
+    pointer-events: none;
+    color: #000;
+}
+
+.project-preview:hover h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#see-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: opacity 300ms ease;
+}
+
+#see-more:hover {
+    opacity: 0.8;
+}
+
+/* hide previews until revealed */
+.project-preview.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.project-preview.hidden.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
