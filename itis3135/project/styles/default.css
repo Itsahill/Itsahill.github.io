@@ -27,6 +27,11 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+
 header ul {
     list-style-type: none;
     display: flex;
@@ -142,7 +147,7 @@ a:hover {
 #left-text-section img,
 #right-text-section img {
   max-width: 40%;
-  width: 220px;
+  width: 500px;
   height: auto;
   flex: 0 0 auto;
   border-radius: 6px;
@@ -152,25 +157,61 @@ a:hover {
 #left-text-section {
   flex-direction: row;
 }
-#left-text-section p {
-  flex: 1 1 55%;
-  text-align: left;
+#left-text-section > img {
+  order: 2;              /* image after the text */
+  flex: 0 0 48%;
+  max-width: 480px;
+  width: 48%;
+  height: auto;
+  object-fit: cover;
+}
+#left-text-section > p {
+  order: 1;
+  flex: 1 1 48%;
   margin: 0;
+  text-align: left;
+  font-size: 1.6em;
 }
 
-/* right section: paragraph on the right, image on the left */
+/* Override: put all text in #right-text-section into a single column to the right of the image */
 #right-text-section {
-  display: flex;
-  align-items: center;
+  /* use grid so the image sits in column 1 and every text node stacks in column 2 */
+  display: grid;
+  grid-template-columns: minmax(220px, 48%) 1fr;
   gap: 1.5rem;
-  margin: 1.5rem 0;
-  flex-wrap: wrap;
-  flex-direction: row; /* use normal order so the <img> (first in HTML) is on the left */
+  align-items: start;
 }
-#right-text-section p {
-  flex: 1 1 55%;
-  text-align: right;
-  margin: 0;
+
+/* image occupies the left column and scales to fill it */
+#right-text-section > img {
+  grid-column: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  order: unset; /* ensure no leftover flex ordering affects layout */
+  flex: unset;
+}
+
+/* all paragraphs and the list go into the right column and stack */
+#right-text-section > p,
+#right-text-section > ul {
+  grid-column: 2;
+  margin: 0 0 0.75rem 0;
+  text-align: left;
+}
+
+/* small-screen fallback: stack vertically */
+@media (max-width: 800px) {
+  #right-text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #right-text-section > p,
+  #right-text-section > ul {
+    grid-column: unset;
+    width: 100%;
+  }
 }
 
 /* Responsive: stack vertically on small screens */
@@ -180,16 +221,112 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-  #left-text-section p,
-  #right-text-section p {
+  #left-text-section > img,
+  #right-text-section > img {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-bottom: 0.75rem;
+  }
+  #left-text-section > p,
+  #right-text-section > p,
+  #right-text-section > ul {
+    width: 100%;
     text-align: left;
     flex: 1 1 100%;
-    margin-bottom: 0.5rem;
+  }
+}
+
+/* layout container for about page */
+main {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding-top: 1rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* sections: horizontal split with gap */
+#left-text-section,
+#right-text-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  flex-wrap: nowrap;
+}
+
+/* make images larger and keep aspect */
+#left-text-section img,
+#right-text-section img {
+  flex: 0 0 48%;
+  width: 48%;
+  max-width: 520px;
+  height: auto;
+  object-fit: cover;
+  background: #eee; /* placeholder background */
+  border-radius: 6px;
+}
+
+/* text column: take remaining space and stack paragraphs vertically */
+#left-text-section > p,
+#right-text-section > p,
+#right-text-section > ul {
+  flex: 1 1 48%;
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+/* ensure left section: text on left, image on right */
+#left-text-section {
+  flex-direction: row;
+}
+
+/* align and format the right-section text block so it's snug to the image */
+#right-text-section > p,
+#right-text-section > ul {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* small-screen (stack) behavior */
+@media (max-width: 800px) {
+  main { width: 94%; }
+  #left-text-section,
+  #right-text-section {
+    flex-direction: column;
+    align-items: flex-start;
   }
   #left-text-section img,
-  #right-text-section img {
-    max-width: 100%;
+  #right-text_section img {
     width: 100%;
+    flex: 0 0 auto;
+    margin-bottom: 0.75rem;
   }
+  #left-text-section > p,
+  #right-text_section > p,
+  #right-text_section > ul {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* small visual polish */
+#left-text-section p + p { margin-top: 0.5rem; }
+#right-text-section ul { padding-left: 1.2rem; margin: 0.25rem 0 0 0; }
+/* fade-in for about page text */
+#left-text-section p,
+#right-text-section > div > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+/* visible state applied by JS */
+#left-text-section p.visible,
+#right-text-section > div > *.visible {
+  opacity: 1;
+  transform: none;
 }
 
