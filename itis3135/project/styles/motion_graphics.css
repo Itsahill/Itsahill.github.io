@@ -1,0 +1,13 @@
+main {
+    width: 100%;
+    background-color: black;
+    height: 200vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+header {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
