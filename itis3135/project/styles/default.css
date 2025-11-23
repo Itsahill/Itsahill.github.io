@@ -21,6 +21,8 @@ header {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+
+
 h1 {
     position: absolute;
     left: 50%;
@@ -240,6 +242,14 @@ a:hover {
 
 /* layout container for about page */
 
+#header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(calc(-50% + 120px));
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
 
 /* sections: horizontal split with gap */
 
