@@ -11,31 +11,81 @@
   <div data-include="components/header.html"></div>
   <main>
     <h2>Motion Graphics</h2>
+    <p>Stuff that moves.</p>
 
     <!-- thumbnails: each .thumb must have a data-video attribute pointing to the video file.
          Provide an optional data-poster for a poster image. -->
     <div class="graphics">
-      <div class="thumb" data-video="./media/video1.mp4" data-poster="./media/thumb1.jpg">
-        <img src="./media/thumb1.jpg" alt="Project A" />
-        <span class="thumb-title">Project A</span>
+      <div class="thumb" data-video="./media/videos/TO THE HEAVENS 2_2.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/TO THE HEAVENS 2_2.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <div class="thumb" data-video="./media/video2.mp4" data-poster="./media/thumb2.jpg">
-        <img src="./media/thumb2.jpg" alt="Project B" />
-        <span class="thumb-title">Project B</span>
+      <div class="thumb" data-video="./media/videos/ART DIRECTION PROJECT FINAL MAP VIDEO.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/ART DIRECTION PROJECT FINAL MAP VIDEO.mp4" type="video/mp4">
+        </video>
       </div>
 
+      <div class="thumb" data-video="./media/videos/Full Comp_1.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/Full Comp_1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/ZOewyns_4.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/ZOewyns_4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/Comp 1_1.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/Comp 1_1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/Spiyc garaphic.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/Spiyc garaphic.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/Comp 1_3.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/Comp 1_3.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/Watch Graphic.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/Watch Graphic.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/LABCORP.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/LABCORP.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="thumb" data-video="./media/videos/PLANET LABCORP.mp4">
+        <video class="thumb-video" muted playsinline>
+          <source src="./media/videos/PLANET LABCORP.mp4" type="video/mp4">
+        </video>
+      </div>
       <!-- add more thumbnails as needed -->
     </div>
 
     <!-- lightbox (hidden by default) -->
-    <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Video lightbox">
-      <div class="lightbox-backdrop"></div>
+    <dialog class="lightbox" aria-hidden="true" aria-label="Video lightbox">
+      <div class="lightbox-backdrop" role="presentation"></div>
       <div class="lightbox-content" role="document">
         <button class="lightbox-close" aria-label="Close video">×</button>
         <video class="lightbox-video" controls playsinline></video>
       </div>
-    </div>
+    </dialog>
   </main>
   <footer></footer>
 

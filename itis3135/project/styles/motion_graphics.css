@@ -1,15 +1,17 @@
-.graphics {
+* {
     margin: 0;
     padding: 0;
+}
+
+.graphics {
+    margin: 0;
     width: 100%;
     background-color: black;
-    height: 200vh;
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: flex-start;
-    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -17,95 +19,154 @@ header {
     margin-bottom: 0;
 }
 
-.graphics .thumb {
-    width: calc(33.333% - 0.66rem);
-    min-width: 220px;
-    cursor: pointer;
-    position: relative;
+h2 {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 10px 0 30px 0;
+}
+
+.thumb {
+    /* fixed, equal height for every item */
+    height: 400px;
+    box-sizing: border-box;
+    padding: 0;
     overflow: hidden;
-    border-radius: 6px;
-    background: #111;
-    color: #fff;
+    background: #000;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    border: white 2px solid;
+
+    /* fade-in initial state */
+    opacity: 0;
+    transform: translateY(18px) scale(0.995);
+    transition: opacity .45s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1);
+    will-change: transform, opacity;
 }
 
-.graphics .thumb img {
-    display: block;
+/* visible state applied by JS when scrolled into view */
+.thumb.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* hover / focus scale (only on devices that support hover) */
+@media (hover: hover) and (pointer: fine) {
+  .thumb:hover,
+  .thumb:focus-within {
+    transform: translateY(0) scale(1.035);
+    z-index: 2; /* keep hovered item above neighbors */
+  }
+}
+
+/* preserve video aspect ratio but fill the thumbnail (no bars) */
+.thumb-video {
     width: 100%;
-    height: auto;
-    transition: transform 300ms ease;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    background: transparent;
+    max-width: none;
+    /* smooth transform when parent scales */
+    transform-origin: center center;
 }
 
-.graphics .thumb:hover img { transform: scale(1.03); }
-.graphics .thumb .thumb-title {
-    position: absolute;
-    left: 8px;
-    bottom: 8px;
-    font-size: 0.9rem;
-    background: rgba(0,0,0,0.45);
-    padding: 6px 8px;
-    border-radius: 4px;
+/* reduce motion preference: disable animations */
+@media (prefers-reduced-motion: reduce) {
+  .thumb,
+  .thumb.is-visible,
+  .thumb:hover,
+  .thumb:focus-within,
+  .thumb-video {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 /* lightbox styles */
 .lightbox {
     position: fixed;
-    inset: 0;
-    display: none; /* toggled by JS */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
 }
 
-.lightbox[aria-hidden="false"] { display: flex; }
+.lightbox[aria-hidden="true"] {
+    display: none;
+}
 
 .lightbox-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(6px);
-    transition: opacity 240ms ease;
-    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
 }
 
 .lightbox-content {
     position: relative;
-    max-width: 1100px;
-    width: calc(100% - 48px);
-    margin: 24px;
-    z-index: 2;
+    width: 90vw;
+    height: 90vh;
+    max-width: 100%;
+    max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10000;
 }
 
 .lightbox-video {
     width: 100%;
-    height: auto;
-    max-height: calc(100vh - 160px);
-    background: #000;
-    border-radius: 6px;
-    box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+    height: 100%;
+    object-fit: contain;
 }
 
 /* close button */
 .lightbox-close {
     position: absolute;
-    right: -8px;
-    top: -8px;
-    z-index: 3;
-    background: #fff;
-    color: #111;
-    border: 0;
-    width: 40px;
-    height: 40px;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
     border-radius: 50%;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    z-index: 10001;
+}
+
+.lightbox-close:hover {
+    background: white;
 }
 
 /* small screens */
 @media (max-width: 700px) {
-    .graphics .thumb { width: calc(50% - 0.5rem); min-width: 140px; }
+    .graphics { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     .lightbox-video { max-height: calc(100vh - 100px); }
 }

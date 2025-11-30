@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!graphics || !lightbox || !videoEl) return;
 
+  // block right-click on the lightbox video
+  if (videoEl) {
+    videoEl.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    }, { passive: false });
+  }
+
   function openLightbox(videoSrc, poster) {
     videoEl.pause();
     videoEl.removeAttribute('src');
@@ -16,8 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (poster) videoEl.poster = poster;
     else videoEl.removeAttribute('poster');
 
+    // prevent download button where supported
+    videoEl.setAttribute('controls', '');
+    videoEl.setAttribute('controlsList', 'nodownload');
+
     videoEl.src = videoSrc;
-    videoEl.setAttribute('controls', ''); // ensure controls visible
     lightbox.setAttribute('aria-hidden', 'false');
     // small delay to allow render before play
     setTimeout(() => {
@@ -85,4 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
       first.focus();
     }
   });
+
+  // fade thumbnails in when they scroll into view
+  (function observeThumbs() {
+    const thumbs = document.querySelectorAll('.thumb');
+    if (!thumbs.length) return;
+
+    // respect reduced motion
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      thumbs.forEach(t => t.classList.add('is-visible'));
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+
+      thumbs.forEach(t => io.observe(t));
+    } else {
+      // fallback: make all visible
+      thumbs.forEach(t => t.classList.add('is-visible'));
+    }
+  })();
 });

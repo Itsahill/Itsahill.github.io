@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* full-bleed container: pull the element out of the page flow so it spans the viewport */
+.bigimage {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;               /* guarantee viewport-width */
+  box-sizing: border-box;
+  padding: 2rem 0;            /* keep vertical spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;           /* avoid small rounding overflow */
+}
+
+.bigimage img {
+  display: block;
+  width: 100%;                /* fill the full-bleed container */
+  height: auto;
+  max-width: none;
+  object-fit: contain;         /* or 'cover' if you want it cropped to fill vertically */
+  margin-left: calc(50% - 50vw);   /* center the full-bleed image */
+  margin-right: calc(50% - 50vw);
+}
+
+.first-text {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.first-text b {
+    font-size: 1.4rem;
+}
+/* tweak for very small screens */
+@media (max-width: 480px) {
+  .bigimage img { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+}

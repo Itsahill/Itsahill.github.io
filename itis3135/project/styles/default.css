@@ -253,4 +253,18 @@ a:hover {
 
 /* sections: horizontal split with gap */
 
+/* make the logo fit the header */
+.site-logo {
+  height: 48px;      /* adjust this to taste */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* responsive: smaller on narrow screens */
+@media (max-width: 600px) {
+  .site-logo { height: 36px; }
+}
+
 
