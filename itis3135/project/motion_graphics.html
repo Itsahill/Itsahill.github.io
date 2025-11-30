@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/default.css">
-    <link rel="stylesheet" href="./styles/motion_graphics.css">
-    <title>Motion Graphics | Shamil Luqman</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/default.css">
+  <link rel="stylesheet" href="./styles/motion_graphics.css">
+  <title>Motion Graphics | Shamil Luqman</title>
 </head>
 <body>
-    <div data-include="components/header.html"></div>
-    <main>
-        
-    </main>
-    <footer></footer>
-    <script src="./scripts/HTMLinclude.js"></script>
+  <div data-include="components/header.html"></div>
+  <main>
+    <h2>Motion Graphics</h2>
+
+    <!-- thumbnails: each .thumb must have a data-video attribute pointing to the video file.
+         Provide an optional data-poster for a poster image. -->
+    <div class="graphics">
+      <div class="thumb" data-video="./media/video1.mp4" data-poster="./media/thumb1.jpg">
+        <img src="./media/thumb1.jpg" alt="Project A" />
+        <span class="thumb-title">Project A</span>
+      </div>
+
+      <div class="thumb" data-video="./media/video2.mp4" data-poster="./media/thumb2.jpg">
+        <img src="./media/thumb2.jpg" alt="Project B" />
+        <span class="thumb-title">Project B</span>
+      </div>
+
+      <!-- add more thumbnails as needed -->
+    </div>
+
+    <!-- lightbox (hidden by default) -->
+    <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Video lightbox">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content" role="document">
+        <button class="lightbox-close" aria-label="Close video">×</button>
+        <video class="lightbox-video" controls playsinline></video>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+
+  <script src="./scripts/HTMLinclude.js"></script>
+  <script src="./scripts/lightbox.js"></script>
 </body>
 </html>
