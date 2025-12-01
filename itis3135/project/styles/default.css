@@ -40,7 +40,7 @@ header ul {
     list-style-type: none;
     display: flex;
     color: white;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0;
     padding: 0;
 }
