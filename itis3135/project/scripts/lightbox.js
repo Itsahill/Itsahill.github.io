@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.setAttribute('aria-hidden', 'false');
     // small delay to allow render before play
     setTimeout(() => {
-      videoEl.play().catch(()=>{ /* autoplay may be blocked; user can press play */ });
+      videoEl.play().catch(() => { /* autoplay may be blocked; user can press play */ });
       // focus for keyboard events
       closeBtn && closeBtn.focus();
     }, 60);
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // respect reduced motion
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      thumbs.forEach(t => t.classList.add('is-visible'));
+      thumbs.forEach((t) => t.classList.add('is-visible'));
       return;
     }
 
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             obs.unobserve(entry.target);
@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
 
-      thumbs.forEach(t => io.observe(t));
+      thumbs.forEach((t) => io.observe(t));
     } else {
       // fallback: make all visible
-      thumbs.forEach(t => t.classList.add('is-visible'));
+      thumbs.forEach((t) => t.classList.add('is-visible'));
     }
   })();
 });

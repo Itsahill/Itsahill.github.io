@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const obs = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         revealChildren(entry.target);
         observer.unobserve(entry.target);
@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
     threshold: 0.12
   });
 
-  sections.forEach(s => obs.observe(s));
+  sections.forEach((s) => obs.observe(s));
 });
