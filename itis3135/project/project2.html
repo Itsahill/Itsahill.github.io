@@ -41,13 +41,78 @@
           alt="second for everyone guide to healthcare"
         />
       </div>
-      <h2>Booklet</h2>
-      <p>
-        The booklet is sectioned into digestible content, with sections for
-        thought process, medical terminology, and information on interactions
-        between stakeholders in US healthcare systems written in plain language.
-      </p>
+      <div class="text-section">
+        <h2>Booklet</h2>
+        <p>
+          The booklet is sectioned into digestible content, with sections for
+          thought process, medical terminology, and information on interactions
+          between stakeholders in US healthcare systems written in plain
+          language.
+        </p>
+      </div>
+      <div class="image-section">
+        <img
+          class="booklet-image"
+          src="./media/Cover.png"
+          alt="Booklet Cover"
+        /><img
+          class="booklet-image"
+          src="./media/Table_of_contents.png"
+          alt="Table of Contents"
+        /><img
+          class="booklet-image"
+          src="./media/Sound_decisions.png"
+          alt="Booklet Page 1"
+        /><img
+          class="booklet-image"
+          src="./media/Sound_decisions2.png"
+          alt="Booklet Page 2"
+        /><img
+          class="booklet-image"
+          src="./media/Medicaid.png"
+          alt="Medicaid Page"
+        />
+      </div>
+      <div class="text-section">
+        <h2>Website</h2>
+        <p>
+          The website contains a compressive A-Z lexicon of the diagnoses in the
+          International Classification of Diseases
+          <a
+            href="https://www.cdc.gov/nchs/icd/icd-10-cm/index.html"
+            target="_blank"
+            >(ICD-10-CM)</a
+          >, the most common system used for medical recordkeeping and billing.
+          Searching simple plain language terms like "stomachache" and "head
+          hurts" will be translated into medical terms that pulls up a reference
+          of diagnoses that can tie to the terms mentioned.
+        </p>
+        <br />
+        <p>
+          The LLM Chatbot summary writer helps you understand the care landscape
+          around a condition. When you enter a concern or a diagnosis, it
+          cross-references verified clinician-written resources and structured
+          codes from the ICD-10-CM to explain what your condition typically
+          involves, what questions patients often ask, and what care decisions
+          may come next. The result is a clear, plain-language summary you can
+          review on your own, or share with your primary care provider to guide
+          a more informed conversation.
+        </p>
+      </div>
+      <div class="bigimage">
+        <figure>
+          <img src="./media/Phone_mock.png" alt="Phone website mockup" />
+          <figcaption>
+            All outputs are designed to support, not replace, clinical
+            decision-making. The AI only references medical content that has
+            been vetted by licensed professionals and mapped to standard
+            ICD-10-CM codes for accuracy and consistency. No personal health
+            data is stored or interpreted as medical advice
+          </figcaption>
+        </figure>
+      </div>
     </main>
+    <div data-include="components/footer.html"></div>
     <script src="./scripts/HTMLinclude.js"></script>
   </body>
 </html>

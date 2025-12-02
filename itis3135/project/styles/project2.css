@@ -55,3 +55,40 @@ p {
 @media (max-width: 480px) {
   .bigimage img { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
 }
+
+.text-section {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.image-section {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.booklet-image {
+  width: 30%;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+figcaption {
+  font-size: 1.3em;
+  font-weight: 100;
+  font-style: italic;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
