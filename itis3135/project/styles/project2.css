@@ -92,3 +92,14 @@ figcaption {
   margin: auto;
   text-align: center;
 }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}

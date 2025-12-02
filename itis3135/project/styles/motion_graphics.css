@@ -91,9 +91,9 @@ p {
   .thumb:hover,
   .thumb:focus-within,
   .thumb-video {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
 
