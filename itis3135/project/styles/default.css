@@ -26,6 +26,8 @@ footer {
   margin: auto;
   background-color: black;
   height: 10vh;
+  text-align: center;
+  padding-top: 0.5rem;
 }
 
 h1 {
@@ -190,6 +192,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     
+    
+}
+
+.footer-logo:hover {
+  cursor: pointer;
 }
 
 /* the image inside the circular container */
