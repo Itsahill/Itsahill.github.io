@@ -57,7 +57,7 @@ p {
 }
 
 /* visible state applied by JS when scrolled into view */
-.thumb.is-visible {
+.is-visible {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
@@ -87,7 +87,7 @@ p {
 /* reduce motion preference: disable animations */
 @media (prefers-reduced-motion: reduce) {
   .thumb,
-  .thumb.is-visible,
+  .is-visible,
   .thumb:hover,
   .thumb:focus-within,
   .thumb-video {

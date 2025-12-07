@@ -99,7 +99,7 @@ figcaption {
   transition: opacity 520ms ease, transform 520ms ease;
 }
 
-.fade-in.visible {
+.visible {
   opacity: 1;
   transform: none;
 }

@@ -47,7 +47,7 @@ h2:hover {
 }
 
 
-.project-preview:hover h2 {
+.project-preview:hover .project-preview__title {
     opacity: 1;
     transform: translateY(0);
 }
@@ -70,12 +70,12 @@ h2:hover {
 #see-more:hover { opacity: 0.8; }
 
 /* hide/reveal states used by JS */
-.project-preview.hidden {
+.hidden {
     opacity: 0;
     transform: translateY(-20px);
     pointer-events: none;
 }
-.project-preview.hidden.revealed {
+.revealed {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
